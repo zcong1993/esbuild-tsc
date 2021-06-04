@@ -1,5 +1,5 @@
 {
-  "name": "@zcong/esbuild-egg-tsc",
+  "name": "@zcong/esbuild-tsc",
   "version": "0.1.0",
   "description": "my cool project",
   "main": "./dist/index.js",
@@ -8,7 +8,7 @@
     "src"
   ],
   "bin": {
-    "esbuild-egg-tsc": "./dist/index.js",
+    "esbuild-tsc": "./dist/index.js",
     "etsc": "./dist/index.js"
   },
   "scripts": {
