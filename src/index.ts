@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import fs from 'fs'
 import debug from 'debug'
 import { sync } from 'fast-glob'
@@ -59,7 +58,7 @@ const scanSourceFiles = (tsconfig: PartialTsConfig): Record<string, string> => {
   return entryPoints
 }
 
-const main = async () => {
+export const main = async () => {
   const userEsbuildConfig = loadJSONConfig(esbuildConfigFile)
   d(`try load userEsbuildConfig: ${esbuildConfigFile}`, userEsbuildConfig)
 
@@ -82,7 +81,5 @@ const main = async () => {
 
   const res = await build(buildOptions)
 
-  console.log('success: ', res)
+  return res
 }
-
-main()

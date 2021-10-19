@@ -4,20 +4,19 @@
   "description": "my cool project",
   "main": "./dist/index.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "bin": {
-    "esbuild-tsc": "./dist/index.js",
-    "etsc": "./dist/index.js"
+    "esbuild-tsc": "./dist/bin/index.js",
+    "etsc": "./dist/bin/index.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "test": "npm run lint && npm run jest",
     "test:cov": "npm run lint && npm run jest:cov",
     "lint": "eslint 'src/**/*.ts'",
     "format": "prettier --write '**/*.{ts,json,md}'",
-    "jest": "jest --detectOpenHandles --forceExit",
+    "jest": "jest",
     "jest:cov": "jest --coverage --detectOpenHandles --forceExit",
     "prepublishOnly": "npm run build",
     "prepare": "husky install",
@@ -27,46 +26,31 @@
   "author": "zcong1993",
   "license": "MIT",
   "devDependencies": {
-    "@types/debug": "^4.1.5",
-    "@types/jest": "^27.0.0",
-    "@types/node": "^15.9.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.0.0",
+    "@types/debug": "^4.1.7",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "husky": "^7.0.0",
-    "jest": "^27.0.4",
-    "lint-staged": "^11.0.0",
-    "prettier": "^2.3.0",
-    "ts-jest": "^27.0.2",
-    "typescript": "^4.3.2"
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^7.0.2",
+    "jest": "^27.3.1",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
   },
   "jest": {
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "preset": "ts-jest"
   },
   "lint-staged": {
-    "*.{js,json,ts}": [
-      "yarn format",
-      "git add ."
-    ]
+    "*.{js,json,ts}": "prettier --write"
   },
   "dependencies": {
-    "debug": "^4.3.1",
-    "esbuild": "^0.13.0",
-    "fast-glob": "^3.2.5",
+    "debug": "^4.3.2",
+    "esbuild": "^0.13.8",
+    "fast-glob": "^3.2.7",
     "jsonc-parser": "^3.0.0"
   }
 }
