@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "debug": "^4.3.2",
-    "esbuild": "^0.14.0",
+    "esbuild": "^0.15.0",
     "fast-glob": "^3.2.7",
     "jsonc-parser": "^3.0.0"
   }
